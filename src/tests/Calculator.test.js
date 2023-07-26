@@ -101,14 +101,19 @@ describe('Calculator', () => {
     fireEvent.click(addButton)
     const button4 = container.getByTestId('number4')
     fireEvent.click(button4)
-    const equalsButton = container.getByTestId('operator-equals')
-    fireEvent.click(equalsButton)
-
     const clearButton = container.getByTestId('clear')
     fireEvent.click(clearButton)
 
+    fireEvent.click(addButton)
+
+    const button3 = container.getByTestId('number3')
+    fireEvent.click(button3)
+
+    const equalsButton = container.getByTestId('operator-equals')
+    fireEvent.click(equalsButton)
+
     const runningTotal = container.getByTestId('running-total')
-    expect(runningTotal.textContent).toEqual('0')
+    expect(runningTotal.textContent).toEqual('4')
   })
 
 })
